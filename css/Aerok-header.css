@@ -10,7 +10,7 @@
 
 header {
     background: #fff;
-    position:fiexd;
+    position:fixed;
     width:100%;
     position:relative;
     box-shadow:0 2px rgba(0,0,0,0.1);
@@ -18,7 +18,7 @@ header {
 
 header .inner {
     margin: 0 2.5%;
-    height: 76px;
+    line-height: 76px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,15 +29,36 @@ header .inner .logo img{
 }
 
 header .inner .main-menu {
-    width: 600px;
+    /* background-color: red; */
+    /* width: 600px; */
     display: flex;
+    gap:60px;
     justify-content: space-between;
 }
 
 header .inner .main-menu>li>a {
     font-size: 20px;
     font-weight:400;
-    padding: 0 16px;
+    padding: 0 20px;
+    position:relative;
+    line-height:76px;
+}
+
+header .main-menu>li>a::after{
+    content:"";
+    display:block;
+    width:0%;
+    height:4px;
+    background-color:#FEC739;
+    left:50%;
+    transform:translateX(-50%);
+    position:absolute;
+    transition:0.5s;
+}
+
+header .main-menu>li>a:hover::after{
+    width:100%;
+    z-index:100;
 }
 
 header .inner .main-menu li:hover .depth1{
@@ -76,15 +97,19 @@ header .inner .depth1 ul{
 
 
 
+
 header .inner .gnb {
-    width: 608px;
+    /* width: 608px; */
     display: flex;
+    gap:50px;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
-header .gnb a {
+header .gnb{
     font-size: 18px;
+    line-height: 76px;
+    /* background-color: aquamarine; */
 }
 
 header .gnb img {
@@ -93,21 +118,28 @@ header .gnb img {
     vertical-align: middle;
 }
 
-header .gnb .search {
-    display: flex;
-    position: relative;
+header .search{
+    display:flex;
+    align-items:center;
+    width:300px;
+    height:30px;
+    border: 2px solid #d9d9d9;
+    position:relative;
 }
 
-header .gnb .search .search-w {
-    width: 280px;
-    height: 36px;
-    border-color: blue;
+header .search-w{
+    border:none;
+    outline:none;
+    width:250px;
+    height:28px;
+    position:absolute;
 }
 
-header .gnb .search .search-icon {
-    position: absolute;
-    left: 90%;
-    line-height: 32px;
+header .search .search-icon{
+    top:50%;
+    transform:translateY(-50%);
+    right: 5px;
+    position:absolute;
 }
 
 header .gnb .log-in {
@@ -116,11 +148,17 @@ header .gnb .log-in {
     position: relative;
 }
 
-/* header .gnb .log-in .sign a{
-    padding-right:12px;
-    border-right: 1px solid black;
-} */
-
+header .gnb .log-in:first-of-type:after{
+    content:"";
+    display:block;
+    width:1px;
+    height:12px;
+    background:#d9d9d9;
+    top:40%;
+    left: 45%;
+    transform:translateX(-45%);
+    position:absolute;
+}
 
 header .gnb .language {
     display: flex;
@@ -130,12 +168,9 @@ header .gnb .language {
 
 header .gnb .language>p>a {
     display: flex;
+    align-items: center;
     gap: 4px;
 }
-
-/* header .gnb .language .arrow{
-    margin-left:4px;
-} */
 
 header .gnb .language .w-language {
     display: none;
@@ -144,9 +179,9 @@ header .gnb .language .w-language {
     line-height: 2;
     text-align: center;
     background-color: #fff;
-    border:1px solid rgba(0,0,0,0.1);
+    border:2px solid rgba(0,0,0,0.1);
     border-radius:4px;
-    top:30px;
+    top:60px;
 }
 
 header .gnb .language:hover .w-language {
@@ -190,6 +225,7 @@ footer .inner{
 .footer-top .footer-menu{
     display:flex;
     gap:120px;
+    font-weight:100;
 }
 
 .footer-top .center{
@@ -209,20 +245,44 @@ footer .inner{
     margin-left:4px;
 }
 
-.footer-top .center p:last-child{
+
+/* .footer-top .center p:last-child{
+    margin-top:20px;
+    text-align:center;
     background-color: #18263E;
     border-radius: 4px;
-    text-align:center;
+} */
+
+
+.footer-top .center>button{
+    width:230px;
+    height:40px;
+    background-color: #18263E;
+    border-radius:4px;
+    font-size:20px;
+    font-weight:400;
+    line-height:40px;
     margin-top:20px;
+    border:0;
+    color:#fff;
 }
 
 .footer-bottom{
     display: flex;
     justify-content: space-between;
     padding-top:44px;
-    border-top:1px solid rgba(255,255,255,0.1);   
+    border-top:1px solid rgba(255,255,255,0.1); 
 }
 
+
+.footer-bottom p{
+    font-weight:100;
+    font-size:14px;
+}
+
+.footer-bottom .footer-address>address{
+    font-style: normal;
+}
 .footer-bottom .copy{
     margin-top:24px;
 }
