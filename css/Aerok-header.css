@@ -12,7 +12,6 @@ header {
     background: #fff;
     position:fixed;
     width:100%;
-    position:relative;
     box-shadow:0 2px rgba(0,0,0,0.1);
 }
 
@@ -90,13 +89,6 @@ header .inner .depth1 ul{
     margin-top:24px;
     width: 285px;
 }
-
-
-
-
-
-
-
 
 header .inner .gnb {
     /* width: 608px; */
@@ -190,18 +182,54 @@ header .gnb .language:hover .w-language {
 
 
 
-main{
-    height:1000px;
+/* main */
+main .main-wrap,
+main .container>section{
+    height:1080px;
+}
+
+.container .fav-wrap,
+.container .QnA {
+    background:#FEC739;
+}
+
+main .container{
+    max-width: 1600px;
+    margin:0 auto;
+}
+
+/* fav */
+
+.fav-wrap h2{
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.fav-wrap .fav-list{
+    height: 600px;
+    display:flex;
+    gap:24px;
+    background-color:red;
+}
+
+.fav-list .img-box{
+    width:247px;
+    border-radius: 15px;
+    overflow:hidden;
+    position:relative;
+}
+
+.fav-list .img-box img{
+    height:100%;
+}
+
+.fav-list .text-box{
+    position:absolute;
+
 }
 
 
-
-
-
-
-
-
-
+/* footer */
 footer {
     background-color: #05183B;
     color: white;
@@ -290,3 +318,5 @@ footer .inner{
 .footer-bottom .footer-logo{
     line-height:120px;
 }
+
+
